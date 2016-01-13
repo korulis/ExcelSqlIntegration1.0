@@ -1,1 +1,0 @@
-c:\users\k.blazevicius\documents\visual studio 2015\Projects\ExcelSqlIntegration1.0\ExcelSqlIntegration1.0\bin\Debug\ExcelSqlIntegration1.0.exe.config
