@@ -23,6 +23,7 @@ namespace ExcelSqlIntegration
         public MainWindow()
         {
             InitializeComponent();
+            Close(); // show no window
         }
     }
 }
