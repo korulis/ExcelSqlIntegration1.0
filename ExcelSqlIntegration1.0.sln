@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationApp", "src\IntegrationApp\IntegrationApp.csproj", "{A25FDA7D-2CBB-4141-BBC2-562C18480C8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelData", "src\ExcelData\ExcelData.csproj", "{57A7A3AD-CB7E-4851-9E7B-6531B7CF0561}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A25FDA7D-2CBB-4141-BBC2-562C18480C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25FDA7D-2CBB-4141-BBC2-562C18480C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25FDA7D-2CBB-4141-BBC2-562C18480C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25FDA7D-2CBB-4141-BBC2-562C18480C8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A7A3AD-CB7E-4851-9E7B-6531B7CF0561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A7A3AD-CB7E-4851-9E7B-6531B7CF0561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A7A3AD-CB7E-4851-9E7B-6531B7CF0561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A7A3AD-CB7E-4851-9E7B-6531B7CF0561}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
