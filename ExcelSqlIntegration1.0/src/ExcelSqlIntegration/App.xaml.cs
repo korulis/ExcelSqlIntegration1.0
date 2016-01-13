@@ -18,7 +18,7 @@ namespace ExcelSqlIntegration
         {
             base.OnStartup(e);
             var doer = new MainStuff();
-            doer.DoStuff();
+            var a= doer.DoStuff();
         }
 
     }

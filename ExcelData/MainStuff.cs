@@ -22,59 +22,17 @@ namespace ExcelData
 
         }
 
-        public void DoStuff()
+
+        public Dictionary<string, string> DoStuff(string fileName = @"C:\Users\k.blazevicius\Desktop\test.xlsx")
         {
-            const string filePathOrStream = @"C:\Users\k.blazevicius\Desktop\test.xlsx";
-            ReadExcelFileSAX(filePathOrStream);
-        }
-
-
-
-
-        void ReadExcelFileSAX(string fileName)
-        {
-            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
+            using (var spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
             {
-                WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
-                WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
-                OpenXmlReader reader = OpenXmlReader.Create(worksheetPart);
+                var worksheet = spreadsheetDocument.WorkbookPart.Workbook.
+                    Descendants<Sheet>().First(s => s.Name == "SpecialSheetName");
+                var theCells = worksheet.Descendants<Cell>();
 
-                Sheet theSheet = workbookPart.Workbook.Descendants<Sheet>().FirstOrDefault(s => s.Name == "SpecialSheetName");
-
-                List<Cell> theCells = worksheetPart.Worksheet.Descendants<Cell>().ToList();
-
-                var rawRange = new List<string>();
-
-                var tempList = new List<string>();
-                foreach (var c in theCells)
-                {
-                    tempList.Add(c.InnerText);
-                    rawRange.Add(c.CellReference);
-                }
-
-
-
-                //#if !DEBUG
-                //                while (reader.Read())
-                //                {
-                //                    if (reader.ElementType == typeof(Cell))
-                //                    {
-                //                        var intas = int.Parse(reader.LoadCurrentElement().InnerText);
-                //                        tempList.Add(intas.ToString());
-                //
-                //                        _readRange.Add();
-                //                        var stringTable = workbookPart.GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
-                //                        var theCell = stringTable?.SharedStringTable.ElementAt(intas);
-                //                        var value = theCell?.InnerText;
-                //
-                //                        tempList.Add(value);
-                //                        rawRange.Add(((Cell)theCell).CellReference);
-                //#endif
-                //                    }
-                //                }
-
-
-                Console.WriteLine(tempList.Count);
+                IEnumerable<Cell> enumerable = theCells as IList<Cell> ?? theCells.ToList();
+                return enumerable.ToDictionary(x => x.CellReference.ToString(), y => y.InnerText);
             }
         }
 
