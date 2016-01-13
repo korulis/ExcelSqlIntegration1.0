@@ -22,8 +22,8 @@ namespace IntegrationApp
     {
         public MainWindow()
         {
-            var doer = new MainStuff();
-            doer.DoStuff();
+            var doer = new ExcelFileParser();
+            doer.GetDataFromSheet();
             
 
 
