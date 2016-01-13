@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ExcelData;
 
 namespace IntegrationApp
 {
@@ -21,7 +22,13 @@ namespace IntegrationApp
     {
         public MainWindow()
         {
+            var doer = new MainStuff();
+            var a = doer.DoStuff();
+
+
             InitializeComponent();
+            Close();
+
         }
     }
 }
