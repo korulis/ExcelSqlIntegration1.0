@@ -23,7 +23,8 @@ namespace IntegrationApp
         public MainWindow()
         {
             var doer = new MainStuff();
-            var a = doer.DoStuff();
+            doer.DoStuff();
+            
 
 
             InitializeComponent();
