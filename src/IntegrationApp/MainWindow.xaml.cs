@@ -22,8 +22,8 @@ namespace IntegrationApp
     {
         public MainWindow()
         {
-            var doer = new ExcelFileParser();
-            doer.GetDataFromSheet();
+            var doer = new ExcelFileParser(@"C:\Users\k.blazevicius\Desktop\test.xlsx");
+            doer.GetDataFromSheet<MyDto>("SpecialSheetName");
             
 
 
@@ -31,5 +31,13 @@ namespace IntegrationApp
             Close();
 
         }
+    }
+
+    public struct MyDto
+    {
+        public string Id;
+        public string Comment;
+        public decimal Amount;
+        public DateTime Timestamp;
     }
 }

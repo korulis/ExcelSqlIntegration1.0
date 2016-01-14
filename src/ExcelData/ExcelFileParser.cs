@@ -15,19 +15,19 @@ namespace ExcelData
     {
         private readonly string _filePath;
 
-        public ExcelFileParser(string filePath = @"C:\Users\k.blazevicius\Desktop\test.xlsx")
+        public ExcelFileParser(string filePath)
         {
             _filePath = filePath;
         }
 
 
-        public void GetDataFromSheet(string worksheetName)
+        public void GetDataFromSheet<T>(string worksheetName)
         {
             using (var spreadsheetDocument = SpreadsheetDocument.Open(_filePath, false))
             {
                 var workbookPart = spreadsheetDocument.WorkbookPart;
                 var theSheet = workbookPart.Workbook.Descendants<Sheet>().FirstOrDefault(s => s.Name == worksheetName);
-                var worksheetPart = (WorksheetPart)(workbookPart.GetPartById(theSheet.Id));
+                var worksheetPart = (WorksheetPart)workbookPart.GetPartById(theSheet?.Id);
                 var theCells = worksheetPart.Worksheet.Descendants<Cell>().ToList();
 
                 var rawRange = new List<string>();
@@ -39,7 +39,6 @@ namespace ExcelData
                 }
 
                 Console.WriteLine(tempList.Count);
-
             }
         }
 
