@@ -27,15 +27,5 @@ namespace IntegrationApp
             _app.Execute();
         }
 
-        public struct ExcelDto
-        {
-            public string Id;
-            public string Comment;
-            public decimal Amount;
-            public DateTime Timestamp;
-        }
-
-
-
     }
 }
