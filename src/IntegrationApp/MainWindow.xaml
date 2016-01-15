@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:IntegrationApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
-        
+        <Button Content="Excecute"
+                    Command="{Binding WindowCommand}"
+                    CommandParameter="excecute"
+                    Grid.Column="0" />
     </Grid>
 </Window>

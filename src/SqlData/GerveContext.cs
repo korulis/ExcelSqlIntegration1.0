@@ -19,12 +19,6 @@ namespace SqlData
         private GerveContext(DbConnection dbConnection, bool contextOwnsConnection)
             : base(dbConnection, contextOwnsConnection)
         {
-            
-
-
-//            var aa = ConfigurationManager.ConnectionStrings["GerveSqlDbConnection"].ToString();
-//            var nn = 2;""""""""""''''
         }
-
     }
 }

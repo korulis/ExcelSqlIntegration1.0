@@ -16,7 +16,6 @@ namespace IntegrationApp
         public MainWindow()
         {
             InitializeComponent();
-            Close();
         }
     }
 }
