@@ -13,7 +13,7 @@ namespace IntegrationApp
     /// </summary>
     public partial class App : Application
     {
-        private AppExecutor _app;
+        private readonly AppExecutor _app;
 
         public App()
         {
@@ -22,9 +22,11 @@ namespace IntegrationApp
 
         protected override void OnStartup(StartupEventArgs e)
         {
-
             base.OnStartup(e);
-            _app.Execute();
+            //compose (and activate?) application ui
+            var mainWindow = new MainWindow(new MainWindowViewModel(_app));
+            //activate application ui
+            mainWindow.Show();
         }
 
     }

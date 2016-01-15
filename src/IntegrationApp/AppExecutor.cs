@@ -6,7 +6,7 @@ using SqlData;
 
 namespace IntegrationApp
 {
-    internal class AppExecutor
+    public class AppExecutor
     {
         private readonly ExcelFileParser _excelRepo;
         private readonly GerveSqlRepository _sqlRepo;

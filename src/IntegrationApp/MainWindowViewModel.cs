@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 
 namespace IntegrationApp
 {
-    internal class MainWindowViewModel
+    public class MainWindowViewModel
     {
         public RelayCommand<string> WindowCommand { get; private set; }
+        private AppExecutor _applicationExecutor;
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(AppExecutor applicationExecutor)
         {
             WindowCommand = new RelayCommand<string>(ExecuteCommand);
+            _applicationExecutor = applicationExecutor;
+        }
+
+        public MainWindowViewModel():this(new AppExecutor())
+        {
         }
 
         private void ExecuteCommand(string command)
         {
+            _applicationExecutor.Execute();
             switch (command)
             {
 //                case "orderPrep":
